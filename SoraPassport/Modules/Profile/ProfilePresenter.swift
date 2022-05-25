@@ -25,9 +25,7 @@ extension ProfilePresenter: ProfilePresenterProtocol {
     }
 
     func activateOption(at index: UInt) {
-        guard let option = ProfileOption(rawValue: index) else {
-            return
-        }
+        let option = viewModelFactory.availableOptions[Int(index)]
 
         switch option {
         case .account:      wireframe.showPersonalDetailsView(from: view)

@@ -119,7 +119,7 @@ final class AccountImportViewController: UIViewController {
         usernameTextField.placeholderText = R.string.localizable.personalInfoUsernameV1(preferredLanguages: locale.rLanguages)
 
         nextButton.setTitle(R.string.localizable.transactionContinue(preferredLanguages: locale.rLanguages), for: .normal)
-        nextButton.color = R.color.neumorphism.tint()!
+        nextButton.color = R.color.neumorphism.buttonDarkGrey()!
         nextButton.font = UIFont.styled(for: .button)
         nextButton.removeNeumorphismShadows()
     }

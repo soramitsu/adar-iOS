@@ -4,6 +4,7 @@ import SoraFoundation
 protocol ProfileViewModelFactoryProtocol: class {
     var biometryIsOn: Bool { get set }
     var biometryAction: ((Bool) -> Void)? { get set }
+    var availableOptions: [ProfileOption] { get }
     func createOptionViewModels(locale: Locale, language: Language?) -> [ProfileOptionViewModelProtocol]
 }
 
@@ -11,19 +12,19 @@ final class ProfileViewModelFactory: ProfileViewModelFactoryProtocol {
 
     var biometryIsOn: Bool = false
     var biometryAction: ((Bool) -> Void)?
+    var availableOptions: [ProfileOption] = [
+        .account,
+        .passphrase,
+        .changePin,
+        .biometry,
+        .language,
+        .logout
+    ]
 
     func createOptionViewModels(locale: Locale, language: Language?) -> [ProfileOptionViewModelProtocol] {
 
         ProfileOptionViewModel.locale = locale
 
-        let availableOptions: [ProfileOption] = [
-            .account,
-            .passphrase,
-            .changePin,
-            .biometry,
-            .language,
-            .logout
-        ]
         let optionViewModels = availableOptions.map { (option) -> ProfileOptionViewModel in
             switch option {
             case .account:      return ProfileOptionViewModel(by: option)
