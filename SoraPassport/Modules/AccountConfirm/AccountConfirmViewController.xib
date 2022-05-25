@@ -45,7 +45,7 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                    <color key="value" name="Neumorphism/Button Dark Grey"/>
+                                    <color key="value" name="Neumorphism/Button Grey"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="bottomShadowColor">
                                     <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,7 +206,7 @@
         <namedColor name="Neumorphism/Background Light Grey">
             <color red="0.96470588235294119" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Neumorphism/Button Dark Grey">
+        <namedColor name="Neumorphism/Button Grey">
             <color red="0.80000000000000004" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Neumorphism/Button Light Grey">

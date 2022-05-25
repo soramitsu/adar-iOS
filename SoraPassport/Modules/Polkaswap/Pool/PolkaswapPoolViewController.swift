@@ -27,7 +27,7 @@ class PolkaswapPoolViewController: UIViewController & PolkaswapPoolViewProtocol 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-#if F_RELEASE || F_TEST
+//#if F_RELEASE || F_TEST
         let placeholder = PolkaswapPoolPlaceholderView()
         placeholder.localizationManager = localizationManager
         if let cover = placeholder.view {
@@ -36,7 +36,7 @@ class PolkaswapPoolViewController: UIViewController & PolkaswapPoolViewProtocol 
                cover.widthAnchor.constraint(equalTo: rootView.widthAnchor).isActive = true
                cover.heightAnchor.constraint(equalTo: rootView.heightAnchor).isActive = true
         }
-#endif
+//#endif
         model.delegate = self
 
         rootView.onAddPool = { [unowned self] in

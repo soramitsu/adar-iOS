@@ -80,7 +80,7 @@ final class AccountCreateViewController: UIViewController {
         shareButton.tintColor = R.color.neumorphism.buttonTextDark()
         shareButton.setImage(R.image.shareArrow(), for: .normal)
         shareButton.color = R.color.neumorphism.buttonLightGrey()!
-        nextButton.color = R.color.neumorphism.tint()!
+        nextButton.color = R.color.neumorphism.buttonDarkGrey()!
         nextButton.font = UIFont.styled(for: .button)
 
         if mode == .view {

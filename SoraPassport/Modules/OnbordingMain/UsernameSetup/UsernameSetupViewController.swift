@@ -94,7 +94,7 @@ final class UsernameSetupViewController: UIViewController {
     }
 
     private func configureButton() {
-        nextButton.color = R.color.neumorphism.tint()!
+        nextButton.color = R.color.neumorphism.buttonDarkGrey()!
         nextButton.font = UIFont.styled(for: .button)
     }
 
@@ -116,7 +116,7 @@ final class UsernameSetupViewController: UIViewController {
         hintLabel.textColor = R.color.neumorphism.textDark()!
         hintLabel.font = UIFont.styled(for: .paragraph3)
     }
-    
+
     // MARK: Private
 
     @IBAction private func textFieldDidChange(_ sender: UITextField) {

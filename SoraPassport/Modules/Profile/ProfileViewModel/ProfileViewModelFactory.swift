@@ -16,7 +16,15 @@ final class ProfileViewModelFactory: ProfileViewModelFactoryProtocol {
 
         ProfileOptionViewModel.locale = locale
 
-        let optionViewModels = ProfileOption.allCases.map { (option) -> ProfileOptionViewModel in
+        let availableOptions: [ProfileOption] = [
+            .account,
+            .passphrase,
+            .changePin,
+            .biometry,
+            .language,
+            .logout
+        ]
+        let optionViewModels = availableOptions.map { (option) -> ProfileOptionViewModel in
             switch option {
             case .account:      return ProfileOptionViewModel(by: option)
             case .friends:      return ProfileOptionViewModel(by: option)

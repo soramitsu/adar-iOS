@@ -24,7 +24,7 @@ final class PolkaswapMainViewController: UIViewController & HiddableBarWhenPushe
     }
 
     fileprivate func configure() {
-        logo.image = R.image.polkaswap()
+        logo.image = R.image.adarlogohorizontal()
         marketButton.setImage(R.image.polkaswapSettings(), for: .normal)
         marketButton.addTarget(self, action: #selector(marketPressed), for: .touchUpInside)
 

@@ -388,11 +388,11 @@ class PolkaswapSwapView: UIViewController & SwapViewProtocol  & KeyboardAdoptabl
 
     func setDisclaimer(isHidden: Bool) {
         disclaimerConstraint.isActive = false
-        if isHidden {
+//        if isHidden {
             disclaimerConstraint = (disclaimerView.bottomAnchor == detailsView.bottomAnchor)
-        } else {
-            disclaimerConstraint = (disclaimerView.topAnchor == detailsView.bottomAnchor)
-        }
+//        } else {
+//            disclaimerConstraint = (disclaimerView.topAnchor == detailsView.bottomAnchor)
+//        }
     }
 }
 

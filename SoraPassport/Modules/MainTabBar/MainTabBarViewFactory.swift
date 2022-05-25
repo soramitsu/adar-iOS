@@ -32,10 +32,6 @@ final class MainTabBarViewFactory: MainTabBarViewFactoryProtocol {
             return nil
         }
 
-        guard let stakingController = createStakingController(for: localizationManager) else {
-            return nil
-        }
-
         guard let engine = WebSocketService.shared.connection else {
             return nil
         }
@@ -59,7 +55,6 @@ final class MainTabBarViewFactory: MainTabBarViewFactoryProtocol {
             walletController,
             polkaswapController,
 //            parliamentController, SN-1199
-            stakingController,
             settingsController
         ]
 
@@ -160,7 +155,7 @@ private extension MainTabBarViewFactory {
         }
 
         let localizableTitle = LocalizableResource { locale in
-            R.string.localizable.tabbarPolkaswapTitle(preferredLanguages: locale.rLanguages)
+            R.string.localizable.tabbarExchangeTitle(preferredLanguages: locale.rLanguages)
         }
 
         let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
@@ -198,34 +193,6 @@ private extension MainTabBarViewFactory {
             $0.navigationBar.layoutMargins.left = 16
             $0.navigationBar.layoutMargins.right = 16
             $0.tabBarItem = createTabBarItem(title: currentTitle, image: R.image.tabBar.parliament())
-            $0.viewControllers = [view.controller]
-        }
-
-        localizationManager.addObserver(with: navigationController) { [weak navigationController] (_, _) in
-            let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
-            navigationController?.tabBarItem.title = currentTitle
-        }
-
-        return navigationController
-    }
-
-    static func createStakingController(for localizationManager: LocalizationManagerProtocol) -> UIViewController? {
-        guard let view = StakingViewFactory.createView() else {
-            return nil
-        }
-
-        let localizableTitle = LocalizableResource { locale in
-            R.string.localizable.tabbarStakingTitle(preferredLanguages: locale.rLanguages)
-        }
-
-        let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
-
-        let navigationController = SoraNavigationController().then {
-            $0.navigationBar.topItem?.title = currentTitle
-            $0.navigationBar.prefersLargeTitles = true
-            $0.navigationBar.layoutMargins.left = 16
-            $0.navigationBar.layoutMargins.right = 16
-            $0.tabBarItem = createTabBarItem(title: currentTitle, image: R.image.tabBar.staking())
             $0.viewControllers = [view.controller]
         }
 
