@@ -6,9 +6,6 @@ final class OnboardingMainViewController: UIViewController, OnboardingMainViewPr
     var presenter: OnboardingMainPresenterProtocol!
 
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var createAccountButton: NeumorphismButton!
     @IBOutlet weak var importAccountButton: NeumorphismButton!
 
@@ -25,31 +22,13 @@ final class OnboardingMainViewController: UIViewController, OnboardingMainViewPr
         super.viewDidLoad()
 
         configure()
-        adjustLayout()
         presenter.setup()
     }
 
     func configure() {
         view.backgroundColor = R.color.neumorphism.base()
-        logo.image = R.image.soraLogoBig()
-        configureLabels()
+        logo.image = R.image.adarlogo()
         configureButtons()
-    }
-
-    func configureLabels() {
-        let locale = locale ?? Locale.current
-
-        titleLabel.text =  R.string.localizable.tutorialManyWorld(preferredLanguages: locale.rLanguages)
-        subtitleLabel.text = soraLabelText
-        descriptionLabel.text = R.string.localizable.tutorialManyWorldDesc(preferredLanguages: locale.rLanguages)
-
-        titleLabel.textColor = R.color.neumorphism.textDark()
-        subtitleLabel.textColor = R.color.neumorphism.tint()
-        descriptionLabel.textColor = R.color.neumorphism.textDark()
-
-        titleLabel.font = UIFont.styled(for: .display1)
-        subtitleLabel.font = UIFont.styled(for: .display1)
-        descriptionLabel.font = UIFont.styled(for: .paragraph2)
     }
 
     fileprivate func configureButtons() {
@@ -57,20 +36,10 @@ final class OnboardingMainViewController: UIViewController, OnboardingMainViewPr
 
         createAccountButton.setTitle(R.string.localizable.create_account_title(preferredLanguages: locale.rLanguages), for: .normal)
         createAccountButton.font = UIFont.styled(for: .button)
-        createAccountButton.color = R.color.neumorphism.tint()!
+        createAccountButton.color = R.color.neumorphism.buttonDarkGrey()!
         importAccountButton.setTitle(R.string.localizable.recoveryTitleV2(preferredLanguages: locale.rLanguages), for: .normal)
         importAccountButton.font = UIFont.styled(for: .button)
         importAccountButton.setTitleColor(R.color.neumorphism.buttonTextDark(), for: .normal)
-    }
-
-    func adjustLayout() {
-        if UIScreen.main.bounds.height <= 568 {
-            logoTopConstraint.constant = 8
-            logoToTitleConstraint.constant = 8
-            titleToSubtitleConstraint.constant = 0
-
-            descriptionLabel.font = UIFont.styled(for: .paragraph3)
-        }
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
