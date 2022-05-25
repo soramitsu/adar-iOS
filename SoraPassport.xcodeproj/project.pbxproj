@@ -270,6 +270,7 @@
 		50A1DB4F3E055D63D7D51D1C /* UnsupportedVersionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFCB4D8F4AF7E03282039A /* UnsupportedVersionPresenter.swift */; };
 		50C0AFBF658C7B1627B6482C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93838B610A2628390A37C56 /* MainTabBarViewController.swift */; };
 		528F243B0A92F956AD870AB0 /* ParliamentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B1BBD97D8F5F861CE95191 /* ParliamentProtocols.swift */; };
+		551A6598283E75B500713621 /* adarlogo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 551A6597283E75B500713621 /* adarlogo.pdf */; };
 		551D47DD2724323800259188 /* NeuPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D47DC2724323800259188 /* NeuPinView.swift */; };
 		551D47DF272432D000259188 /* NeuPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551D47DE272432D000259188 /* NeuPinView.xib */; };
 		551D47E1272693E500259188 /* NeuNumpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D47E0272693E400259188 /* NeuNumpadView.swift */; };
@@ -1396,6 +1397,7 @@
 		4DC2B85AFDBCEADBD47A68A0 /* NetworkAvailabilityLayerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkAvailabilityLayerTests.swift; sourceTree = "<group>"; };
 		4E66CBD87DA82030099480CF /* AboutProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AboutProtocols.swift; sourceTree = "<group>"; };
 		53B7D3B7F0A95A671F3ADBDE /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
+		551A6597283E75B500713621 /* adarlogo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = adarlogo.pdf; sourceTree = "<group>"; };
 		551D47DC2724323800259188 /* NeuPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuPinView.swift; sourceTree = "<group>"; };
 		551D47DE272432D000259188 /* NeuPinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NeuPinView.xib; sourceTree = "<group>"; };
 		551D47E0272693E400259188 /* NeuNumpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuNumpadView.swift; sourceTree = "<group>"; };
@@ -2643,6 +2645,7 @@
 		02623EAC2178C0910011250E = {
 			isa = PBXGroup;
 			children = (
+				551A6597283E75B500713621 /* adarlogo.pdf */,
 				02623EB72178C0910011250E /* SoraPassport */,
 				02623ECC2178C0930011250E /* SoraPassportTests */,
 				02623ED72178C0930011250E /* SoraPassportUITests */,
@@ -5418,6 +5421,7 @@
 				84639D1322CA3615009D847C /* userVerifiedResponse.json in Resources */,
 				028547F3220B688500A40F41 /* projectDetailsResponse.json in Resources */,
 				947E1F8C2689EA6E006C5A70 /* whitelist.json in Resources */,
+				551A6598283E75B500713621 /* adarlogo.pdf in Resources */,
 				02D656DF2204D93600AAA66A /* votedProjectsResponse.json in Resources */,
 				847527492364D47E0028D871 /* checkInvitationResponse.json in Resources */,
 				945A573525DE8203003E4023 /* runtime-default.json in Resources */,
