@@ -119,7 +119,7 @@ class PolkaswapSwapView: UIViewController & SwapViewProtocol  & KeyboardAdoptabl
 
         slippageButton?.addTarget(self, action: #selector(didPressSlippage), for: .touchUpInside)
 
-        nextButton.color = R.color.brandPolkaswapPink()!
+        nextButton.color = R.color.neumorphism.buttonDarkGrey()!
         nextButton.setTitleColor(R.color.brandWhite()!, for: .normal)
         nextButton?.isFlat = true
         nextButton.addTarget(self, action: #selector(didPressNext), for: .touchUpInside)

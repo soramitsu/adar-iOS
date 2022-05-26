@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02623EB42178C0910011250E"
-               BuildableName = "ADAR.app"
+               BuildableName = "SoraPassport.app"
                BlueprintName = "SoraPassport"
                ReferencedContainer = "container:SoraPassport.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02623EB42178C0910011250E"
-            BuildableName = "ADAR.app"
+            BuildableName = "SoraPassport.app"
             BlueprintName = "SoraPassport"
             ReferencedContainer = "container:SoraPassport.xcodeproj">
          </BuildableReference>
@@ -124,7 +124,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02623EB42178C0910011250E"
-            BuildableName = "ADAR.app"
+            BuildableName = "SoraPassport.app"
             BlueprintName = "SoraPassport"
             ReferencedContainer = "container:SoraPassport.xcodeproj">
          </BuildableReference>
@@ -141,7 +141,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02623EB42178C0910011250E"
-            BuildableName = "ADAR.app"
+            BuildableName = "SoraPassport.app"
             BlueprintName = "SoraPassport"
             ReferencedContainer = "container:SoraPassport.xcodeproj">
          </BuildableReference>
