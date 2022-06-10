@@ -17,7 +17,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testGetMethods() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -45,7 +45,7 @@ class JSONRPCTests: NetworkBaseTests {
 
         var block: UInt32 = 10000
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
 
         let data = Data(Data(bytes: &block, count: MemoryLayout<UInt32>.size).reversed())
@@ -73,7 +73,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testFinalizedHead() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
 
         // when
@@ -103,7 +103,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testNetworkType() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -129,7 +129,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testHelthCheck() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -155,7 +155,7 @@ class JSONRPCTests: NetworkBaseTests {
     func doNottestAssetList() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -272,7 +272,7 @@ class JSONRPCTests: NetworkBaseTests {
 
     func performMigrationTest(mnemonic: String) throws {
         let devUrl = "wss://ws.framenode-1.s1.dev.sora2.soramitsu.co.jp/"
-        let url = URL(string: devUrl)!//URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: devUrl)!//URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -319,7 +319,7 @@ class JSONRPCTests: NetworkBaseTests {
     func NotestBalance() {
         let devUrl = "wss://ws.framenode-1.s1.dev.sora2.soramitsu.co.jp/"
 
-        let url = URL(string: devUrl)!//URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: devUrl)!//URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -349,7 +349,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testNonceFetch() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -377,7 +377,7 @@ class JSONRPCTests: NetworkBaseTests {
     func DoNotTestHeader() {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -430,7 +430,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testBlockExtraction() throws {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -467,7 +467,7 @@ class JSONRPCTests: NetworkBaseTests {
     }
 
     func doNottestAccountInfoPolkadot() throws {
-        try performAccountInfoTest(url: URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!,
+        try performAccountInfoTest(url: URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!,
                                    address: "5DfCSrkgzUAsCtsugSbQRgAqbRk2p3L39oxRRvhLsywHPR37",
                                    type: UInt16(42),
                                    precision: 10)
@@ -515,7 +515,7 @@ class JSONRPCTests: NetworkBaseTests {
     }
 
     func DoNotTestStakingLedgerPolkadot() throws {
-        try performStakingInfoTest(url: URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!,
+        try performStakingInfoTest(url: URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!,
                                    address: "5DfCSrkgzUAsCtsugSbQRgAqbRk2p3L39oxRRvhLsywHPR37",
                                    type: SNAddressType(42),
                                    precision: 10)
@@ -565,7 +565,7 @@ class JSONRPCTests: NetworkBaseTests {
     }
 
     func doNottestPolkadotActiveEra() {
-        performGetActiveEra(url: URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!)
+        performGetActiveEra(url: URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!)
     }
 
     func performGetActiveEra(url: URL) {
@@ -609,7 +609,7 @@ class JSONRPCTests: NetworkBaseTests {
     func doNottestGetMetaData() {
         let logger = Logger.shared
         let operationQueue = OperationQueue()
-        let engine = WebSocketEngine(url: URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!, logger: logger)
+        let engine = WebSocketEngine(url: URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!, logger: logger)
         let method = RPCMethod.getRuntimeMetadata
 
         let metaOperation = JSONRPCListOperation<JSONScaleDecodable<RuntimeMetadata>>(engine: engine,
@@ -921,7 +921,7 @@ class JSONRPCTests: NetworkBaseTests {
         let keystore = InMemoryKeychain()
         let settings = InMemorySettingsManager()
         let passphrase = "keep private jewel raven party outer trim gloom excess trend fossil heart clay shell tennis"
-        let url = URL(string: "wss://ws.framenode-1.s1.dev.sora2.soramitsu.co.jp/")!//URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!//
+        let url = URL(string: "wss://ws.framenode-1.s1.dev.sora2.soramitsu.co.jp/")!//URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!//
 
         try AccountCreationHelper.createAccountFromMnemonic(passphrase,
                                                             cryptoType: .sr25519,
@@ -1065,7 +1065,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testIsSwapAvailable() throws {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -1100,7 +1100,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testObtainingAvailableMarketAlgorithms() throws {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -1143,7 +1143,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testRecalculationOfSwapValuesWithDesiredInput() throws {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
@@ -1188,7 +1188,7 @@ class JSONRPCTests: NetworkBaseTests {
     func testRecalculationOfSwapValuesWithDesiredOutput() throws {
         // given
 
-        let url = URL(string: "wss://ws.stage.sora2.soramitsu.co.jp")!
+        let url = URL(string: "wss://ws.framenode-2.s1.stg1.sora2.soramitsu.co.jp")!
         let logger = Logger.shared
         let operationQueue = OperationQueue()
 
