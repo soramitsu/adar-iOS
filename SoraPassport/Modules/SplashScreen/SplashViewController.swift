@@ -1,10 +1,7 @@
-/**
-* Copyright Soramitsu Co., Ltd. All Rights Reserved.
-* SPDX-License-Identifier: Apache 2.0
-*/
-
 import Foundation
 import UIKit
+import Lottie
+import SnapKit
 
 class SplashViewController: UIViewController, SplashViewProtocol {
 
@@ -14,11 +11,15 @@ class SplashViewController: UIViewController, SplashViewProtocol {
         return R.nib.launchScreen(owner: nil)!
     }()
 
-    override func loadView() {
-        view = splash
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(splash)
+        splash.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     func animate(duration animationDurationBase: Double, completion: @escaping () -> Void) {
-        splash.animate(duration: animationDurationBase, completion: completion)
+        completion()
     }
 }

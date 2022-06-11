@@ -1,8 +1,3 @@
-/**
-* Copyright Soramitsu Co., Ltd. All Rights Reserved.
-* SPDX-License-Identifier: Apache 2.0
-*/
-
 import Foundation
 import CommonWallet
 import IrohaCrypto
@@ -19,7 +14,7 @@ final class InvoiceScanConfigurator {
         let message = WalletTextStyle(font: UIFont.styled(for: .paragraph2), color: R.color.brandWhite()!)
 
         let uploadTitle = WalletTextStyle(font: UIFont.styled(for: .button), color: R.color.brandWhite()!)
-        let upload = WalletRoundedButtonStyle(background: R.color.themeAccent()!, title: uploadTitle)
+        let upload = WalletRoundedButtonStyle(background: R.color.neumorphism.buttonDarkGrey()!, title: uploadTitle)
 
         return InvoiceScanViewStyle(
             background: R.color.brandWhite()!,

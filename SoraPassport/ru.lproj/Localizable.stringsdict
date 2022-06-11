@@ -12,8 +12,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>остался %li день</string>
         <key>few</key>
@@ -34,8 +32,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>остался %li час</string>
         <key>few</key>
@@ -56,8 +52,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>осталась %li минута</string>
         <key>few</key>
@@ -78,8 +72,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>осталась %li секунда</string>
         <key>few</key>
@@ -100,8 +92,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li приглашение</string>
         <key>few</key>
@@ -122,8 +112,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li понравилось</string>
         <key>few</key>
@@ -144,8 +132,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string>друзей отдали голоса</string>
         <key>one</key>
         <string>%li друг отдал голоса</string>
         <key>few</key>
@@ -166,8 +152,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li день</string>
         <key>few</key>
@@ -188,8 +172,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li час</string>
         <key>few</key>
@@ -210,8 +192,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li минута</string>
         <key>few</key>
@@ -232,8 +212,6 @@
         <string>NSStringPluralRuleType</string>
         <key>NSStringFormatValueTypeKey</key>
         <string>li</string>
-        <key>zero</key>
-        <string></string>
         <key>one</key>
         <string>%li секунда</string>
         <key>few</key>

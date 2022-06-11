@@ -1,8 +1,3 @@
-/**
-* Copyright Soramitsu Co., Ltd. All Rights Reserved.
-* SPDX-License-Identifier: Apache 2.0
-*/
-
 import UIKit
 import SoraKeystore
 import CommonWallet
@@ -37,11 +32,13 @@ final class MainTabBarViewFactory: MainTabBarViewFactoryProtocol {
             return nil
         }
 
-        guard let stakingController = createStakingController(for: localizationManager) else {
+        guard let engine = WebSocketService.shared.connection else {
             return nil
         }
-
-        guard let polkaswapController = createPolkaswapController(for: localizationManager) else {
+        let polkaswapContext = PolkaswapNetworkOperationFactory(engine: engine)
+        guard let polkaswapController = createPolkaswapController(walletContext: walletContext,
+                                                                  polkaswapContext: polkaswapContext,
+                                                                  localizationManager: localizationManager) else {
             return nil
         }
 
@@ -57,8 +54,7 @@ final class MainTabBarViewFactory: MainTabBarViewFactoryProtocol {
         view.viewControllers = [
             walletController,
             polkaswapController,
-            parliamentController,
-            stakingController,
+//            parliamentController, SN-1199
             settingsController
         ]
 
@@ -116,7 +112,7 @@ private extension MainTabBarViewFactory {
         }
 
         let normalAttributes = [NSAttributedString.Key.foregroundColor: R.color.baseContentTertiary()!]
-        let selectedAttributes = [NSAttributedString.Key.foregroundColor: R.color.baseContentPrimary()!]
+        let selectedAttributes = [NSAttributedString.Key.foregroundColor: R.color.neumorphism.tint()]
 
         tabBarItem.setTitleTextAttributes(normalAttributes, for: .normal)
         tabBarItem.setTitleTextAttributes(selectedAttributes, for: .selected)
@@ -151,13 +147,15 @@ private extension MainTabBarViewFactory {
         return walletController
     }
 
-    static func createPolkaswapController(for localizationManager: LocalizationManagerProtocol) -> UIViewController? {
-        guard let view = PolkaswapViewFactory.createView() else {
+    static func createPolkaswapController(walletContext: CommonWalletContextProtocol,
+                                          polkaswapContext: PolkaswapNetworkOperationFactoryProtocol,
+                                          localizationManager: LocalizationManagerProtocol) -> UIViewController? {
+        guard let view = PolkaswapMainViewFactory.createView(walletContext: walletContext, polkaswapContext: polkaswapContext) else {
             return nil
         }
 
         let localizableTitle = LocalizableResource { locale in
-            R.string.localizable.tabbarPolkaswapTitle(preferredLanguages: locale.rLanguages)
+            R.string.localizable.tabbarExchangeTitle(preferredLanguages: locale.rLanguages)
         }
 
         let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
@@ -189,7 +187,7 @@ private extension MainTabBarViewFactory {
 
         let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
 
-        let navigationController = ExtensibleBarNavigationController().then {
+        let navigationController = SoraNavigationController().then {
             $0.navigationBar.topItem?.title = currentTitle
             $0.navigationBar.prefersLargeTitles = true
             $0.navigationBar.layoutMargins.left = 16
@@ -206,38 +204,11 @@ private extension MainTabBarViewFactory {
         return navigationController
     }
 
-    static func createStakingController(for localizationManager: LocalizationManagerProtocol) -> UIViewController? {
-        guard let view = StakingViewFactory.createView() else {
-            return nil
-        }
-
-        let localizableTitle = LocalizableResource { locale in
-            R.string.localizable.tabbarStakingTitle(preferredLanguages: locale.rLanguages)
-        }
-
-        let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
-
-        let navigationController = SoraNavigationController().then {
-            $0.navigationBar.topItem?.title = currentTitle
-            $0.navigationBar.layoutMargins.left = 16
-            $0.navigationBar.layoutMargins.right = 16
-            $0.tabBarItem = createTabBarItem(title: currentTitle, image: R.image.tabBar.staking())
-            $0.viewControllers = [view.controller]
-        }
-
-        localizationManager.addObserver(with: navigationController) { [weak navigationController] (_, _) in
-            let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
-            navigationController?.tabBarItem.title = currentTitle
-        }
-
-        return navigationController
-    }
-
     static func createProfileController(for localizationManager: LocalizationManagerProtocol) -> UIViewController? {
         guard let view = ProfileViewFactory.createView() else { return nil }
 
         let localizableTitle = LocalizableResource { locale in
-            R.string.localizable.tabbarProfileTitle(preferredLanguages: locale.rLanguages)
+            R.string.localizable.commonSettings(preferredLanguages: locale.rLanguages)
         }
 
         let currentTitle = localizableTitle.value(for: localizationManager.selectedLocale)
@@ -246,6 +217,7 @@ private extension MainTabBarViewFactory {
             $0.navigationBar.topItem?.title = currentTitle
             $0.navigationBar.layoutMargins.left = 16
             $0.navigationBar.layoutMargins.right = 16
+            $0.navigationBar.prefersLargeTitles = true
             $0.tabBarItem = createTabBarItem(title: currentTitle, image: R.image.tabBar.profile())
             $0.viewControllers = [view.controller]
         }

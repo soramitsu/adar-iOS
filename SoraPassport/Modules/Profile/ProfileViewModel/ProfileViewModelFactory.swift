@@ -1,14 +1,10 @@
-/**
-* Copyright Soramitsu Co., Ltd. All Rights Reserved.
-* SPDX-License-Identifier: Apache 2.0
-*/
-
 import Foundation
 import SoraFoundation
 
 protocol ProfileViewModelFactoryProtocol: class {
     var biometryIsOn: Bool { get set }
     var biometryAction: ((Bool) -> Void)? { get set }
+    var availableOptions: [ProfileOption] { get }
     func createOptionViewModels(locale: Locale, language: Language?) -> [ProfileOptionViewModelProtocol]
 }
 
@@ -16,12 +12,20 @@ final class ProfileViewModelFactory: ProfileViewModelFactoryProtocol {
 
     var biometryIsOn: Bool = false
     var biometryAction: ((Bool) -> Void)?
+    var availableOptions: [ProfileOption] = [
+        .account,
+        .passphrase,
+        .changePin,
+        .biometry,
+        .language,
+        .logout
+    ]
 
     func createOptionViewModels(locale: Locale, language: Language?) -> [ProfileOptionViewModelProtocol] {
 
         ProfileOptionViewModel.locale = locale
 
-        let optionViewModels = ProfileOption.allCases.map { (option) -> ProfileOptionViewModel in
+        let optionViewModels = availableOptions.map { (option) -> ProfileOptionViewModel in
             switch option {
             case .account:      return ProfileOptionViewModel(by: option)
             case .friends:      return ProfileOptionViewModel(by: option)
@@ -33,6 +37,7 @@ final class ProfileViewModelFactory: ProfileViewModelFactoryProtocol {
             case .language:     return ProfileOptionViewModel(by: option)
             case .faq:          return ProfileOptionViewModel(by: option)
             case .about:        return ProfileOptionViewModel(by: option)
+            case .disclaimer:   return ProfileOptionViewModel(by: option)
             case .logout:       return ProfileOptionViewModel(by: option)
             }
         }
